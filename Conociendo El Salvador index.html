@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conociendo El Salvador</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #173b2d;
+}
+  
+header {
+    background:
+        linear-gradient(rgba(0, 50, 35, 0.45), rgba(0, 50, 35, 0.65)),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  font-size: 16px;
+}
+
+nav {
+  background: #075b45;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-weight: bold;
+}
+
+main {
+  padding: 18px;
+}
+
+h2 {
+  color: #087f5b;
+}
+
+input, select {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #b8d4c3;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.lugar {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 3px 10px #00000012;
+}
+
+button {
+  background: #087f5b;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.mapa {
+  display: inline-block;
+  background: #e1f3e7;
+  color: #075b45;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background: #075b45;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🇸🇻 Conociendo El Salvador</h1>
+  <p>¡Descubre la belleza de nuestro país!</p>
+</header>
+
+<nav>
+  
+<nav>
+    <a href="#lugares">Lugares</a>
+    <a href="#comida">Comida</a>
+    <a href="#rutas">Rutas</a>
+    <a href="#hoteles">Hoteles</a>
+    <a href="#cabanas">Cabañas</a>
+    <a href="#restaurantes">Restaurantes</a>
+    <a href="#volcanes">Volcanes</a>
+</nav>
+
+</nav>
+
+<main>
+  <h2>🔎 Encuentra tu próximo destino</h2>
+
+  <input id="busqueda"
+  placeholder="Busca playas, volcanes, pueblos..."
+  oninput="buscarLugares()">
+
+  <select id="departamento" onchange="buscarLugares()">
+    <option value="">Todos los departamentos</option>
+    <option>San Salvador</option>
+    <option>Santa Ana</option>
+    <option>La Libertad</option>
+    <option>Sonsonate</option>
+    <option>Ahuachapán</option>
+    <option>Chalatenango</option>
+    <option>Cuscatlán</option>
+    <option>La Paz</option>
+    <option>Cabañas</option>
+    <option>San Vicente</option>
+    <option>Usulután</option>
+    <option>San Miguel</option>
+    <option>Morazán</option>
+    <option>La Unión</option>
+  </select>
+
+  <section id="lugares">
+    <h2>📍 Lugares turísticos</h2>
+    <div id="resultados"></div>
+  </section>
+
+  <section id="comida">
+    <h2>🍽️ ¿Dónde comer?</h2>
+    <div class="lugar">
+      <h3>Pupuserías salvadoreñas</h3>
+      <p>Prueba pupusas de queso, frijoles, chicharrón y otros sabores.</p>
+      <p>Precio: depende del establecimiento.</p>
+      <a class="mapa"
+      href="https://www.google.com/maps/search/pupuserias+El+Salvador"
+      target="_blank">Buscar pupuserías</a>
+    </div>
+    <div class="lugar">
+      <h3>Restaurantes y comida típica</h3>
+      <p>Encuentra yuca frita, tamales, mariscos y platos tradicionales.</p>
+      <a class="mapa"
+      href="https://www.google.com/maps/search/restaurantes+El+Salvador"
+      target="_blank">Buscar restaurantes</a>
+    </div>
+ 
+<div class="lugar">
+  <h3>🍖 La Pampa El Volcán</h3>
+  <p>Restaurante de carnes y vistas al volcán.</p>
+  <p>📍 La Libertad</p>
+  <a href="https://www.google.com/maps/search/?api=1&query=La+Pampa+El+Volcan+El+Salvador" target="_blank">Ver ubicación</a>
+</div>
+
+<div class="lugar">
+  <h3>🫓 Típicos Margoth</h3>
+  <p>Pupusas y comida típica salvadoreña.</p>
+  <p>📍 San Salvador</p>
+  <a href="https://www.google.com/maps/search/?api=1&query=Tipicos+Margoth+El+Salvador" target="_blank">Ver ubicación</a>
+</div>
+
+<div class="lugar">
+  <h3>🍗 Pollo Campero</h3>
+  <p>Pollo frito y acompañamientos.</p>
+  <p>📍 San Salvador</p>
+  <a href="https://www.google.com/maps/search/?api=1&query=Pollo+Campero+San+Salvador" target="_blank">Ver ubicación</a>
+</div>
+
+<div class="lugar">
+  <h3>🍽️ El Café de Don Pedro</h3>
+  <p>Desayunos y comida tradicional.</p>
+  <p>📍 San Salvador</p>
+  <a href="https://www.google.com/maps/search/?api=1&query=El+Cafe+de+Don+Pedro+San+Salvador" target="_blank">Ver ubicación</a>
+</div>
+
+<h2>🍽️ Comida en los 14 departamentos</h2>
+
+<div id="comidaDepartamentos"></div>
+
+<script>
+const zonasComida = [
+  ["Ahuachapán", "Pupusería La Choza", "Ahuachapán"],
+  ["Santa Ana", "Rincón Típico", "Santa Ana"],
+  ["Sonsonate", "Restaurante Punta Diamante", "Sonsonate"],
+  ["Chalatenango", "Restaurantes en Chalatenango", "Chalatenango"],
+  ["La Libertad", "Restaurantes de El Tunco", "El Tunco La Libertad"],
+  ["San Salvador", "Restaurante Relajo", "San Salvador"],
+  ["Cuscatlán", "Restaurantes en Suchitoto", "Suchitoto Cuscatlán"],
+  ["La Paz", "La Casona Café y Típicos", "San Francisco Chinameca"],
+  ["Cabañas", "Restaurantes en Sensuntepeque", "Sensuntepeque"],
+  ["San Vicente", "Restaurantes en San Vicente", "San Vicente El Salvador"],
+  ["Usulután", "La Fonda de Alegría", "Alegría Usulután"],
+  ["San Miguel", "Restaurante El Izote", "San Miguel"],
+  ["Morazán", "Restaurantes en Perquín", "Perquín Morazán"],
+  ["La Unión", "Restaurante Super Mondongo", "La Unión"]
+];
+
+document.getElementById("comidaDepartamentos").innerHTML =
+  zonasComida.map(([depto, nombre, ubicacion]) => `
+    <div class="lugar">
+      <h3>🍴 ${nombre}</h3>
+      <p>📍 Departamento: ${depto}</p>
+      <p>Encuentra opciones para comer en esta zona.</p>
+      <a class="mapa"
+         href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ubicacion + " " + nombre)}"
+         target="_blank">
+         Ver ubicación
+      </a>
+    </div>
+  `).join("");
+</script>
+
+  </section>
+
+<section id="hoteles">
+  <h2>🏨 Hoteles en El Salvador</h2>
+  <p>Encuentra dónde hospedarte en los 14 departamentos.</p>
+  <div id="listaHoteles"></div>
+</section>
+
+<script>
+const hoteles = [
+  ["Ahuachapán", "Hoteles en Ataco"],
+  ["Santa Ana", "Hoteles en Santa Ana"],
+  ["Sonsonate", "Hoteles en Los Cóbanos"],
+  ["Chalatenango", "Hoteles en La Palma"],
+  ["La Libertad", "Hoteles en El Tunco"],
+  ["San Salvador", "Hoteles en San Salvador"],
+  ["Cuscatlán", "Hoteles en Suchitoto"],
+  ["La Paz", "Hoteles en Costa del Sol"],
+  ["Cabañas", "Hoteles en Sensuntepeque"],
+  ["San Vicente", "Hoteles en San Vicente"],
+  ["Usulután", "Hoteles en Alegría"],
+  ["San Miguel", "Hoteles en San Miguel"],
+  ["Morazán", "Hoteles en Perquín"],
+  ["La Unión", "Hoteles en La Unión"]
+];
+
+document.getElementById("listaHoteles").innerHTML =
+  hoteles.map(([departamento, nombre]) => `
+    <div class="lugar">
+      <h3>🏨 ${nombre}</h3>
+      <p>📍 ${departamento}</p>
+      <p>Encuentra opciones de alojamiento.</p>
+      <a class="mapa"
+         href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nombre + ' El Salvador')}"
+         target="_blank">
+         Buscar hoteles
+      </a>
+    </div>
+  `).join("");
+</script>
+
+<section id="cabanas">
+  <h2>🏡 Cabañas en El Salvador</h2>
+  <p>Descubre cabañas para descansar y disfrutar de la naturaleza.</p>
+
+  <div id="listaCabanas"></div>
+</section>
+
+<script>
+const cabanas = [
+  ["Ahuachapán", "Cabañas en Apaneca"],
+  ["Santa Ana", "Cabañas en Cerro Verde"],
+  ["Sonsonate", "Cabañas en Juayúa"],
+  ["Chalatenango", "Cabañas en El Pital"],
+  ["La Libertad", "Cabañas en Comasagua"],
+  ["San Salvador", "Cabañas en El Boquerón"],
+  ["Cuscatlán", "Cabañas en Suchitoto"],
+  ["La Paz", "Cabañas en San Luis Talpa"],
+  ["Cabañas", "Cabañas en Ilobasco"],
+  ["San Vicente", "Cabañas en San Vicente"],
+  ["Usulután", "Cabañas en Alegría"],
+  ["San Miguel", "Cabañas en Chinameca"],
+  ["Morazán", "Cabañas en Perquín"],
+  ["La Unión", "Cabañas en Conchagua"]
+];
+
+document.getElementById("listaCabanas").innerHTML =
+  cabanas.map(([departamento, nombre]) => `
+    <div class="lugar">
+      <h3>🏡 ${nombre}</h3>
+      <p>📍 Departamento: ${departamento}</p>
+      <p>Busca opciones de alojamiento y descanso.</p>
+      <a class="mapa"
+         href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nombre + ' El Salvador')}"
+         target="_blank">
+         Buscar cabañas
+      </a>
+    </div>
+  `).join("");
+</script>
+
+<section id="volcanes">
+  <h2>🌋 Volcanes de El Salvador</h2>
+  <p>Descubre los impresionantes volcanes de nuestro país.</p>
+  <div id="listaVolcanes"></div>
+</section>
+
+<script>
+const volcanesES = [
+  ["Volcán de Santa Ana", "Santa Ana",
+   "Conocido como Ilamatepec, tiene un impresionante cráter."],
+  ["Volcán de Izalco", "Sonsonate",
+   "Conocido históricamente como el Faro del Pacífico."],
+  ["Volcán de San Salvador", "San Salvador",
+   "Famoso por el cráter El Boquerón."],
+  ["Volcán de San Miguel", "San Miguel",
+   "También llamado Chaparrastique."],
+  ["Volcán de Conchagua", "La Unión",
+   "Ofrece hermosas vistas del golfo de Fonseca."],
+  ["Volcán de Tecapa", "Usulután",
+   "Conocido por la laguna de Alegría."],
+  ["Volcán de Usulután", "Usulután",
+   "Destaca por sus paisajes naturales."],
+  ["Volcán Chingo", "Santa Ana",
+   "Ubicado en la frontera con Guatemala."],
+  ["Volcán de Guazapa", "San Salvador",
+   "Montaña de origen volcánico con historia y naturaleza."],
+  ["Volcán de San Vicente", "San Vicente",
+   "También conocido como Chinchontepec."],
+  ["Volcán de Coatepeque", "Santa Ana",
+   "Su antigua caldera alberga el lago de Coatepeque."]
+];
+
+document.getElementById("listaVolcanes").innerHTML =
+  volcanesES.map(([nombre, departamento, descripcion]) => `
+    <div class="lugar">
+      <h3>🌋 ${nombre}</h3>
+      <p>📍 ${departamento}</p>
+      <p>${descripcion}</p>
+      <a class="mapa"
+         href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nombre + ' El Salvador')}"
+         target="_blank">
+        📍 Ver ubicación
+      </a>
+    </div>
+  `).join("");
+</script>
+
+  <section id="rutas">
+    <h2>🗺️ Rutas y transporte</h2>
+    <p>Escribe tu punto de salida y tu destino.</p>
+    <input id="salida" placeholder="¿Desde dónde sales?">
+    <input id="destino" placeholder="¿Adónde quieres ir?">
+    <button onclick="abrirRuta()">Ver ruta en el mapa</button>
+    <p id="aviso"></p>
+  </section>
+
+  <section>
+    <h2>💰 Calcula tu presupuesto</h2>
+    <label>¿Cuántas personas viajan?</label>
+    <input id="personas" type="number" min="1" value="2">
+    <label>Transporte por persona ($)</label>
+    <input id="transporte" type="number" min="0" value="5">
+    <label>Comida por persona ($)</label>
+    <input id="comidaPrecio" type="number" min="0" value="8">
+    <label>Entradas por persona ($)</label>
+    <input id="entrada" type="number" min="0" value="3">
+    <button onclick="calcular()">Calcular presupuesto</button>
+    <h3 id="total">Total estimado: $32.00</h3>
+    <p>Es un cálculo orientativo. Verifica los precios antes de viajar.</p>
+  </section>
+</main>
+
+<footer>
+  <p>🇸🇻 Conociendo El Salvador</p>
+  <p>Explora, disfruta y cuida nuestro país.</p>
+</footer>
+
+<script>
+const lugares = [ 
+  {
+    nombre: "Parque Nacional El Boquerón",
+    departamento: "San Salvador",
+    descripcion: "Senderos y vistas del cráter volcánico.",
+    tipo: "Volcán",
+    precio: "Consultar tarifa vigente"
+  },
+  {
+    nombre: "Puerta del Diablo",
+    departamento: "San Salvador",
+    descripcion: "Formaciones rocosas y vistas panorámicas.",
+    tipo: "Naturaleza",
+    precio: "Consultar tarifas vigentes"
+  },
+  {
+    nombre: "Lago de Coatepeque",
+    departamento: "Santa Ana",
+    descripcion: "Un lago rodeado de montañas y restaurantes.",
+    tipo: "Lago",
+    precio: "Depende de la actividad"
+  },
+  {
+    nombre: "Playa El Tunco",
+    departamento: "La Libertad",
+    descripcion: "Surf, playa y restaurantes.",
+    tipo: "Playa",
+    precio: "Consultar servicios y actividades"
+  },
+  {
+    nombre: "Hotel Real InterContinental San Salvador",
+    departamento: "San Salvador",
+    descripcion: "Hotel con habitaciones cómodas, piscina y restaurantes.",
+    tipo: "Hotel",
+    precio: "Consultar tarifas vigentes"
+  },
+  {
+    nombre: "Hotel de Montaña Cerro Verde",
+    departamento: "Santa Ana",
+    descripcion: "Hospedaje para disfrutar del clima fresco y la naturaleza.",
+    tipo: "Hotel",
+    precio: "Consultar tarifas vigentes"
+  },
+  {
+    nombre: "Cabañas de Lago de Coatepeque",
+    departamento: "Santa Ana",
+    descripcion: "Cabañas para descansar y disfrutar de las vistas al lago.",
+    tipo: "Cabaña",
+    precio: "Consultar disponibilidad y tarifas"
+  },
+  {
+    nombre: "Cabañas en El Tunco",
+    departamento: "La Libertad",
+    descripcion: "Alojamiento cerca de la playa, ideal para descansar y practicar surf.",
+    tipo: "Cabaña",
+    precio: "Consultar disponibilidad y tarifas"
+  },
+  {
+    nombre: "Restaurante Picnic Steak House",
+    departamento: "San Salvador",
+    descripcion: "Restaurante para disfrutar de carnes y diferentes platillos.",
+    tipo: "Restaurante",
+    precio: "Consultar menú y precios"
+  },
+  {
+    nombre: "Restaurantes del Lago de Coatepeque",
+    departamento: "Santa Ana",
+    descripcion: "Opciones gastronómicas con vistas al lago y comida variada.",
+    tipo: "Restaurante",
+    precio: "Consultar menú y precios"
+  },
+  {
+    nombre: "Restaurantes de Playa El Tunco",
+    departamento: "La Libertad",
+    descripcion: "Lugares para comer mariscos y disfrutar de la gastronomía costera.",
+    tipo: "Restaurante",
+    precio: "Consultar menú y precios"
+  },
+
+  {
+    nombre: "Cerro Verde",
+    departamento: "Santa Ana",
+    descripcion: "Bosques, senderos y paisajes volcánicos.",
+    tipo: "Naturaleza",
+    precio: "Consultar tarifa vigente"
+  },
+  {
+    nombre: "Suchitoto",
+    departamento: "Cuscatlán",
+    descripcion: "Calles históricas, cultura y gastronomía.",
+    tipo: "Pueblo",
+    precio: "Depende de las actividades"
+  },
+  {
+    nombre: "Joya de Cerén",
+    departamento: "La Libertad",
+    descripcion: "Conoce un importante sitio arqueológico.",
+    tipo: "Historia",
+    precio: "Consultar tarifa vigente"
+  },
+  {
+    nombre: "Playa El Cuco",
+    departamento: "San Miguel",
+    descripcion: "Playa para descansar y disfrutar del mar.",
+    tipo: "Playa",
+    precio: "Consultar servicios"
+  },
+{
+  nombre: "El Pital",
+  departamento: "Chalatenango",
+  descripcion: "Montañas, bosques, clima fresco y opciones de camping.",
+  tipo: "Camping",
+  precio: "Consultar tarifas"
+},
+{
+  nombre: "Parque Bicentenario",
+  departamento: "San Salvador",
+  descripcion: "Zonas verdes, senderos y naturaleza.",
+  tipo: "Parque",
+  precio: "Consultar servicios"
+},
+{
+  nombre: "Río Sapo",
+  departamento: "Morazán",
+  descripcion: "Río, bosques y excursiones de naturaleza.",
+  tipo: "Naturaleza",
+  precio: "Consultar acceso y guías"
+},
+{
+  nombre: "Volcán de Conchagua",
+  departamento: "La Unión",
+  descripcion: "Miradores y opciones de camping con operadores locales.",
+  tipo: "Camping",
+  precio: "Consultar tarifas"
+},
+{
+  nombre: "Concepción de Ataco",
+  departamento: "Ahuachapán",
+  descripcion: "Restaurantes, cafeterías, artesanías y calles coloridas.",
+  tipo: "Pueblo",
+  precio: "Según establecimiento"
+}
+];
+function buscarLugares() {
+  const texto = document.getElementById("busqueda")
+    .value.toLowerCase();
+  const depto = document.getElementById("departamento").value;
+
+  
+
+const encontrados = lugares.filter(lugar => {
+    const nombre = lugar.nombre.toLowerCase();
+    const tipo = lugar.tipo.toLowerCase();
+    const descripcion = lugar.descripcion.toLowerCase();
+
+    const quitarAcentos = texto =>
+        texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    const busqueda = quitarAcentos(texto);
+    const nombreNormalizado = quitarAcentos(nombre);
+    const tipoNormalizado = quitarAcentos(tipo);
+    const descripcionNormalizada = quitarAcentos(descripcion);
+
+    const coincide =
+        nombreNormalizado.includes(busqueda) ||
+        tipoNormalizado.includes(busqueda) ||
+        descripcionNormalizada.includes(busqueda);
+
+    return coincide && (!depto || lugar.departamento === depto);
+});
+
+
+
+  document.getElementById("resultados").innerHTML =
+    encontrados.map(lugar => `
+      <article class="lugar">
+  <img
+    class="foto-lugar"
+    src="${lugar.imagen || obtenerImagen(lugar.nombre)}"
+    alt="Fotografía de ${lugar.nombre}"
+    loading="lazy"
+    onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Conociendo+El+Salvador';"
+  />
+  <h3>${lugar.nombre}</h3>
+        <h3>${lugar.nombre}</h3>
+        <p>${lugar.descripcion}</p>
+        <p><b>Departamento:</b> ${lugar.departamento}</p>
+        <p><b>Precio:</b> ${lugar.precio}</p>
+        <a class="mapa"
+        href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(lugar.nombre + ', El Salvador')}"
+        target="_blank">Ver ubicación</a>
+      </article>
+    `).join("");
+
+  if (encontrados.length === 0) {
+    document.getElementById("resultados").innerHTML =
+      "<p>No encontramos lugares con esa búsqueda.</p>";
+  }
+}
+
+function abrirRuta() {
+  const salida = document.getElementById("salida").value.trim();
+  const destino = document.getElementById("destino").value.trim();
+
+  if (!salida || !destino) {
+    document.getElementById("aviso").textContent =
+      "Escribe el lugar de salida y el destino.";
+    return;
+  }
+
+  const url = "https://www.google.com/maps/dir/?api=1&origin=" +
+    encodeURIComponent(salida) + "&destination=" +
+    encodeURIComponent(destino);
+
+  window.open(url, "_blank");
+}
+
+function calcular() {
+  const personas = Math.max(1,
+    Number(document.getElementById("personas").value) || 1);
+  const transporte = Math.max(0,
+    Number(document.getElementById("transporte").value) || 0);
+  const comida = Math.max(0,
+    Number(document.getElementById("comidaPrecio").value) || 0);
+  const entrada = Math.max(0,
+    Number(document.getElementById("entrada").value) || 0);
+
+  const total = personas * (transporte + comida + entrada);
+  document.getElementById("total").textContent =
+    "Total estimado: $" + total.toFixed(2);
+}
+
+buscarLugares();   
+  function obtenerImagen(nombre) {
+  const imagenes = {
+    "Volcán de Santa Ana":
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "Lago de Coatepeque":
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+    "Playa El Tunco":
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+}
+</body>
+    </html>
